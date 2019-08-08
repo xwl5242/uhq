@@ -2,8 +2,8 @@ from top.api.base import RestApi
 
 
 class TbkTpwdCreateRequest(RestApi):
-	def __init__(self, domain='gw.api.taobao.com', port=80):
-		RestApi.__init__(self, domain, port)
+	def __init__(self):
+		RestApi.__init__(self)
 		self.ext = None
 		self.logo = None
 		self.text = None

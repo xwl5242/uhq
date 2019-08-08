@@ -163,7 +163,8 @@ class RestApi(object):
     # Rest api的基类
     # ===========================================================================
     
-    def __init__(self, domain='gw.api.taobao.com', port=80):
+    def __init__(self, domain='gw.api.taobao.com', port=80, appkey='27722846',
+                 secret='0bd75d91b3cd38bd1e3fe3b77112fc0e'):
         # =======================================================================
         # 初始化基类
         # Args @param domain: 请求的域名或者ip
@@ -172,8 +173,8 @@ class RestApi(object):
         self.__domain = domain
         self.__port = port
         self.__httpmethod = "POST"
-        self.__app_key = ''
-        self.__secret = ''
+        self.__app_key = appkey
+        self.__secret = secret
 
     def get_request_header(self):
         return {

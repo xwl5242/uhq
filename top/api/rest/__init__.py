@@ -1,3 +1,5 @@
 from top.api.rest.TbkUatmFavoritesGetRequest import TbkUatmFavoritesGetRequest
 from top.api.rest.TbkUatmFavoritesItemGetRequest import TbkUatmFavoritesItemGetRequest
 from top.api.rest.TbkTpwdCreateRequest import TbkTpwdCreateRequest
+from top.api.rest.TbkDgOptimusMaterialRequest import TbkDgOptimusMaterialRequest
+from top.api.rest.TbkItemInfoGetRequest import TbItemInfoGetRequest
