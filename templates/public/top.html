@@ -1,0 +1,24 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title>优惠券</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/ui.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"/>
+<link rel="stylesheet" href="{{url_for('static', filename='fonts/iconfont.css')}}"/>
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery.min.js')}}" ></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/ui.js')}}" ></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/jquery.SuperSlide.2.1.1.js')}}" ></script>
+<script type="text/javascript" src="{{url_for('static', filename='layer/layer.js')}}" ></script>
+<script type="text/javascript">
+	var system ={win : false,mac : false,xll : false};
+	var p = navigator.platform;
+	system.win = p.indexOf("Win") == 0;
+	system.mac = p.indexOf("Mac") == 0;
+	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+	var wapurl=window.location.pathname.replace(/index.php\//, "");
+	 wapurl=wapurl.replace(/item/, "detail");
+	if(system.win||system.mac||system.xll){}else{
+	window.location.href="{:C('yh_headerm_html')}" + wapurl}
+</script>

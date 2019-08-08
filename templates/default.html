@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+    {% include './public/top.html' %}
+</head>
+<body class="fed-min-width">
+    <!-- 页面顶端菜单 & 手机端底部菜单开始 -->
+    {% include './public/header.html' %}
+    <!-- 页面顶端菜单 & 手机端底部菜单结束 -->
+    {% block body %}{% endblock %}
+    <!-- footer -->
+    {% include './public/footer.html' %}
+</body>
+{% block js %}{% endblock %}
+</html>

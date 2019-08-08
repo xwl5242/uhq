@@ -1,0 +1,243 @@
+{% extends './default.html' %}
+{% block body %}
+
+<!--banner-->
+<div class="banner-wrap">
+    <div class="container cl">
+        <div class="banner-l">
+            <h3>[今日推荐]</h3>
+            <div class="recom">
+                <div class="pbd">
+                    <ul>
+                        <!-- for 循环，今日推荐 -->
+                        <li>
+                            <a href="">
+                                <img src="">
+                                <p>券后价：<span class="c-main">￥50</span></p>
+                                <p class="text-overflow">皮鞋</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="phd"><ul></ul></div>
+            </div>
+        </div>
+        <div class="banner cl">
+            <div class="bd">
+                <ul>
+                    <!-- for 循环，广告 -->
+                    <li _src="" style="width: 100%;">
+                        <a href="" target="_blank"><img src="" width="760" height="338"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hd"><ul></ul></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(".banner").slide({
+        titCell: ".hd ul",
+        mainCell: ".bd ul",
+        effect: "fold",
+        autoPlay: true,
+        autoPage: true,
+        trigger: "click",
+        startFun: function(i) {
+            var curLi = jQuery(".banner .bd li").eq(i);
+            if ( !! curLi.attr("_src")) {
+                curLi.css("background", curLi.attr("_src")).removeAttr("_src")
+            }
+        }
+    });
+    jQuery(".recom").slide({titCell:".phd ul",mainCell:".pbd ul",autoPlay:true,autoPage: true,});
+</script>
+<!--service-->
+<div class="service">
+    <div class="container cl">
+        <ul class="cl">
+            <li>
+                <p class="f-l">券</p>
+                <div class="f-l">
+                    <h3 class="c-main">先领券再下单</h3>
+                    <h4>享现金立减优惠</h4>
+                </div>
+            </li>
+            <li>
+                <p class="f-l"><i class="iconfont icon-filter"></i></p>
+                <div class="f-l">
+                    <h3 class="c-main">人工精选</h3>
+                    <h4>优质、优惠商品</h4>
+                </div>
+            </li>
+            <li>
+                <p class="f-l"><i class="iconfont icon-fuwuwuyou"></i></p>
+                <div class="f-l">
+                    <h3 class="c-main">安全无忧</h3>
+                    <h4>所有交易在淘宝完成安全放心</h4>
+                </div>
+            </li>
+            <li>
+                <p class="f-l">24</p>
+                <div class="f-l">
+                    <h3 class="c-main">每日上新</h3>
+                    <h4>24小时不间断上新</h4>
+                </div>
+            </li>
+            <li>
+                <p class="f-l"><i class="iconfont icon-meiyuan"></i></p>
+                <div class="f-l">
+                    <h3 class="c-main">积分兑好礼</h3>
+                    <h4>提交订单就能赚积分</h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--temai-->
+<div class="container cl">
+    <div class="indexblock">
+        <div class="hottitle">
+            <p><i class="iconfont icon-fire"></i>特卖精选</p>
+        </div>
+        <div class="temai cl">
+            <ul>
+                <!-- for 循环，遍历所有的商品 -->
+                <li>
+                    <div class="item">
+                        <a target="_blank" href="" class="link">
+                            <img src="">
+                            <p class="text-overflow"></p>
+                        </a>
+                        <div class="price">
+                            <p class="c-main">￥<span>11.99</span>(券后价)</p><p><del>11.0</del></p>
+                        </div>
+                        <div class="sales cl">
+                        <img src="">
+                            <p>月销量：<span class="c-primary">20</span>件</p>
+                        </div>
+                        <a target="_blank" href="" class="coupon">
+                            <h5>优惠券：<span>5</span>元</h5>
+                            <p>立即<br>领券</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--hot-->
+<div class="container cl">
+    <div class="indexblock">
+        <div class="hottitle">
+            <p><i class="iconfont icon-gift"></i>超级人气榜</p>
+        </div>
+        <div class="hot cl">
+            <ul>
+                <!-- for 循环，遍历所有的商品 -->
+                <li>
+                    <div class="item cl">
+                        <div class="pic f-l mr-10">
+                            <a target="_blank" href=""><img src=""></a>
+                        </div>
+                        <div class="txt f-l">
+                            <div class="tit">
+                                <img src=""><a href="">鞋子</a>
+                            </div>
+                            <div class="price cl">
+                                <p class="f-l c-main">￥<span>券后价11</span><del>￥11</del></p>
+                                <p class="f-r">省<span class="c-main">5</span>元</p>
+                            </div>
+                            <a target="_blank" href="" class="sales">月销量33件</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item cl">
+                        <div class="pic f-l mr-10">
+                            <a target="_blank" href=""><img src=""></a>
+                        </div>
+                        <div class="txt f-l">
+                            <div class="tit">
+                                <img src=""><a href="">鞋子</a>
+                            </div>
+                            <div class="price cl">
+                                <p class="f-l c-main">￥<span>券后价11</span><del>￥11</del></p>
+                                <p class="f-r">省<span class="c-main">5</span>元</p>
+                            </div>
+                            <a target="_blank" href="" class="sales">月销量33件</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item cl">
+                        <div class="pic f-l mr-10">
+                            <a target="_blank" href=""><img src=""></a>
+                        </div>
+                        <div class="txt f-l">
+                            <div class="tit">
+                                <img src=""><a href="">鞋子</a>
+                            </div>
+                            <div class="price cl">
+                                <p class="f-l c-main">￥<span>券后价11</span><del>￥11</del></p>
+                                <p class="f-r">省<span class="c-main">5</span>元</p>
+                            </div>
+                            <a target="_blank" href="" class="sales">月销量33件</a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--main-->
+<!-- for循环 -->
+<div class="main">
+    <div class="container cl">
+        <div class="color color{$vo.cid}">
+            <a target="_blank" href="" class="tit">
+                <h3>{$vo.name}<i class="iconfont icon-right2"></i></h3>
+                <span>{$vo.remark}</span>
+            </a>
+            <div class="bd">
+                <ul>
+                    <li><a href="{:U('/item/',array('id'=>$vo['hotsale']['id']))}" target="_blank">
+                        <img src="{:$vo['hotsale']['pic_url']}_300x300" width="200" height="200">
+                        <p>{:$vo['hotsale']['title']}</p></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="shop">
+            <table>
+                <tr>
+                    <!-- for 循环 -->
+                    <td>
+                        <div class="item">
+                            <div class="cl">
+                                <div class="pic f-l">
+                                    <a target="_blank" href="{:U('/item/',array('id'=>$child['id']))}"><img src="{:$child['pic_url']}_300x300"></a>
+                                </div>
+                                <div class="txt f-l">
+                                    <div class="price"><p>券后价</p></div>
+                                    <p class="c-main">￥<span>{$child.coupon_price}</span></p>
+                                    <p><if condition="$child.shop_type eq 'C' ">淘宝</if><if condition="$child.shop_type eq 'B' ">天猫</if>价：￥{$child.price}</p>
+                                    <div class="coupon">领券省：{$child.quan}元</div>
+                                </div>
+                            </div>
+                            <a target="_blank" href="{:U('/item/',array('id'=>$child['id']))}" class="tit text-overflow">{$child.title}</a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block js %}
+{% endblock %}
