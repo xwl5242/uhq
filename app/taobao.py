@@ -36,7 +36,6 @@ class TBApi:
                 good['short_title'] = g.get('short_title')
                 good['coupon_share_url'] = g.get('coupon_share_url')
                 goods.append(good)
-                print(good)
             return goods
         except Exception as e:
             import traceback

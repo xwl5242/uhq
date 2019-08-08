@@ -9,14 +9,15 @@
             <div class="recom">
                 <div class="pbd">
                     <ul>
-                        <!-- for 循环，今日推荐 -->
+                        {% for rec in today_rec %}
                         <li>
-                            <a href="">
-                                <img src="">
-                                <p>券后价：<span class="c-main">￥50</span></p>
-                                <p class="text-overflow">皮鞋</p>
+                            <a href="{{ rec.click_url }}">
+                                <img src="{{ rec.pict_url }}">
+                                <p>券后价：<span class="c-main">￥{{ rec.zk_final_price }}</span></p>
+                                <p class="text-overflow">{{ rec.title }}</p>
                             </a>
                         </li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="phd"><ul></ul></div>
@@ -103,26 +104,28 @@
         </div>
         <div class="temai cl">
             <ul>
-                <!-- for 循环，遍历所有的商品 -->
+                {% for tx in txs %}
                 <li>
                     <div class="item">
-                        <a target="_blank" href="" class="link">
-                            <img src="">
+                        <a target="_blank" href="{{ tx.click_url }}" class="link">
+                            <img src="{{ tx.pict_url }}">
                             <p class="text-overflow"></p>
                         </a>
                         <div class="price">
-                            <p class="c-main">￥<span>11.99</span>(券后价)</p><p><del>11.0</del></p>
+                            <p class="c-main">￥<span>{{ tx.reserve_price }}</span>(折扣价)</p>
+                            <p><del>{{ tx.zk_final_price }}</del></p>
                         </div>
                         <div class="sales cl">
                         <img src="">
-                            <p>月销量：<span class="c-primary">20</span>件</p>
+                            <p>月销量：<span class="c-primary">{{ tx.volume }}</span>件</p>
                         </div>
-                        <a target="_blank" href="" class="coupon">
-                            <h5>优惠券：<span>5</span>元</h5>
+                        <a target="_blank" href="{{ tx.coupon_share_url }}" class="coupon">
+                            <h5>优惠券：<span>{{ tx.coupon_amount }}</span>元</h5>
                             <p>立即<br>领券</p>
                         </a>
                     </div>
                 </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
