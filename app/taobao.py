@@ -56,7 +56,17 @@ class TBApi:
         except Exception as e:
             print(e)
 
+    @staticmethod
+    def search_item(keyword, page_no=1, page_size=20):
+        try:
+            req = TbkDgMaterialOptionalRequest(keyword, TB_ADZONE_ID, page_no=page_no, page_size=page_size)
+            resp = req.getResponse()
+            items = resp.get('tbk_dg_material_optional_responseg').get('result_list').get('map_data')
+            return items
+        except Exception as e:
+            print(e)
+
 
 if __name__ == '__main__':
-    TBApi.get_goods_list()
+    TBApi.search_item('女装')
 
