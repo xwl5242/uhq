@@ -27,8 +27,11 @@
 <div class="navigation">
 	<div class="container cl">
 		<ul>
-			<li class="cur"><a href="/">首页</a></li>
-			<li class="cur"><a href="">菜单1</a></li>
+            {% for menu in menus %}
+                <li class="{% if loop.index==1 %}cur{% endif %}">
+                    <a href="q/{{ menu|str_split(':')|get_list(1)|b64encode }}">{{ menu|str_split(':')|get_list(0) }}</a>
+                </li>
+            {% endfor %}
 		</ul>
 	</div>
 </div>
@@ -37,7 +40,9 @@
 	<div class="container cl">
 		<ul>
 			<li class="cur"><a href="">全部</a></li>
-			<li class="cur"><a href="">1</a></li>
+			{% for nav in navs %}
+                <li><a href="q-t/{{ (cur_q|string+'-'+material_map.get(cur_q|string)|get_list(loop.index-1))|b64encode }}">{{ nav }}</a></li>
+            {% endfor %}
 		</ul>
 	</div>
 </div>

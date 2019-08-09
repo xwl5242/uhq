@@ -116,7 +116,7 @@
                             <p><del>{{ tx.zk_final_price }}</del></p>
                         </div>
                         <div class="sales cl">
-                        <img src="">
+                        <img src="{{ url_for('static', filename='images/taobao.png') }}">
                             <p>月销量：<span class="c-primary">{{ tx.volume }}</span>件</p>
                         </div>
                         <a target="_blank" href="{{ tx.coupon_share_url }}" class="coupon">
@@ -202,14 +202,14 @@
     <div class="container cl">
         <div class="color color{$vo.cid}">
             <a target="_blank" href="" class="tit">
-                <h3>{$vo.name}<i class="iconfont icon-right2"></i></h3>
-                <span>{$vo.remark}</span>
+                <h3>名称<i class="iconfont icon-right2"></i></h3>
+                <span>备注</span>
             </a>
             <div class="bd">
                 <ul>
-                    <li><a href="{:U('/item/',array('id'=>$vo['hotsale']['id']))}" target="_blank">
-                        <img src="{:$vo['hotsale']['pic_url']}_300x300" width="200" height="200">
-                        <p>{:$vo['hotsale']['title']}</p></a>
+                    <li><a href="" target="_blank">
+                        <img src="" width="200" height="200">
+                        <p>title</p></a>
                     </li>
                 </ul>
             </div>
@@ -222,16 +222,16 @@
                         <div class="item">
                             <div class="cl">
                                 <div class="pic f-l">
-                                    <a target="_blank" href="{:U('/item/',array('id'=>$child['id']))}"><img src="{:$child['pic_url']}_300x300"></a>
+                                    <a target="_blank" href=""><img src=""></a>
                                 </div>
                                 <div class="txt f-l">
                                     <div class="price"><p>券后价</p></div>
-                                    <p class="c-main">￥<span>{$child.coupon_price}</span></p>
-                                    <p><if condition="$child.shop_type eq 'C' ">淘宝</if><if condition="$child.shop_type eq 'B' ">天猫</if>价：￥{$child.price}</p>
-                                    <div class="coupon">领券省：{$child.quan}元</div>
+                                    <p class="c-main">￥<span></span></p>
+                                    <p>价：￥555</p>
+                                    <div class="coupon">领券省：666元</div>
                                 </div>
                             </div>
-                            <a target="_blank" href="{:U('/item/',array('id'=>$child['id']))}" class="tit text-overflow">{$child.title}</a>
+                            <a target="_blank" href="" class="tit text-overflow">商品名称</a>
                         </div>
                     </td>
                 </tr>
