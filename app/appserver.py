@@ -45,12 +45,17 @@ class AppServer:
         return render_template(html, menus=MENU, navs=NAV, material_map=MATERIAL_MAP, **kwargs)
 
     @staticmethod
-    def render_page(material_id, html='index.html', **kwargs):
+    def render_page(ma_id=None, s_kw=None, html='index.html', **kwargs):
         page_no = request.args.get('p')
         page_no = int(page_no) if page_no else 1
-        top = TBApi.get_goods_list(material_id, page_no, 15)
-        txs = TBApi.get_goods_list(material_id, page_no+1, 15)
-        return AppServer.render(html, page_no=page_no, banners=top, txs=txs,
-                                total=MATERIAL_COUNT_MAP.get(str(material_id)), **kwargs)
+        top, txs = [], []
+        total = 100 if s_kw else MATERIAL_COUNT_MAP.get(str(ma_id))
+        if ma_id:
+            top = TBApi.get_goods_list(ma_id, page_no, 15)
+            txs = TBApi.get_goods_list(ma_id, page_no+1, 15)
+        if s_kw:
+            top = TBApi.search_item(s_kw, page_no, 15)
+            txs = TBApi.search_item(s_kw, page_no+1, 15)
+        return AppServer.render(html, page_no=page_no, banners=top, txs=txs, total=total, **kwargs)
 
 

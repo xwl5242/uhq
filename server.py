@@ -10,7 +10,6 @@ app = app_server.server_app
 
 @app.route('/')
 def index():
-
     return AppServer.render_page(ROOT, cur_q=ROOT)
 
 
@@ -30,8 +29,7 @@ def menu_nav_html(q_type_item):
 
 @app.route('/q-k/<q_name>')
 def search_item(q_name):
-    # items = TBApi.search_item(q_name)
-    return []
+    return AppServer.render_page(s_kw=q_name, cur_q=ROOT)
 
 
 if __name__ == '__main__':

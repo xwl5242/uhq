@@ -142,12 +142,8 @@ class TopException(Exception):
         self.service_host = None
     
     def __str__(self, *args, **kwargs):
-        sb = "errorcode=" + mix_str(self.errorcode) +\
-            " message=" + mix_str(self.message) +\
-            " subcode=" + mix_str(self.subcode) +\
-            " submsg=" + mix_str(self.submsg) +\
-            " application_host=" + mix_str(self.application_host) +\
-            " service_host=" + mix_str(self.service_host)
+        sb = f"errorcode={self.errorcode}message={self.message}subcode={self.subcode}" \
+            f"submsg={self.submsg}application_host={self.application_host}service_host={self.service_host}"
         return sb
 
   
