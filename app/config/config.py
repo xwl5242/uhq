@@ -14,14 +14,18 @@ ROOT = int(MENU[0].split(':')[1])
 # 页面导航，二级菜单
 NAV = [n for n in str(cp.get('MENU_NAV', 'nav')).split(',')]
 # 各导航对应的物料id集合
-MATERIAL_MAP = dict()
+MATERIAL_MAP, MATERIAL_COUNT_MAP = dict(), dict()
 __options = cp.options('MATERIAL')
 for option in __options:
-    MATERIAL_MAP[str(option).replace('material_', '')] = [material for material in str(cp.get('MATERIAL', option)).split(',')]
-MATERIAL_COUNT_MAP = dict()
-__options1 = cp.options('MATERIAL_COUNT')
-for option in __options1:
-    MATERIAL_COUNT_MAP[str(option).replace('material_', '')] = int(cp.get('MATERIAL_COUNT', option))
+    __key = str(option).replace('material_', '')
+    __count = str(cp.get('MATERIAL', option)).split(':')[1]
+    __ma_list_str = str(cp.get('MATERIAL', option)).split(':')[0]
+    __value = [material for material in __ma_list_str.split(',')]
+    MATERIAL_MAP[__key] = __value
+    MATERIAL_COUNT_MAP[__key] = __count
+    for v in __value:
+        MATERIAL_COUNT_MAP[v] = __count
 
 if __name__ == '__main__':
     print(MATERIAL_MAP)
+    print(MATERIAL_COUNT_MAP)

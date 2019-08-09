@@ -26,7 +26,7 @@ class AppServer:
         self._server_app.add_template_filter(get_sub_list, 'get_sub_list')
         self._server_app.add_template_filter(b64encode, 'b64encode')
         # self.scheduler.init_app(self._server_app)
-        # self.scheduler.add_job(id='app-job', func=MyJobs.app_index_job, trigger='interval', seconds=11 * 60)
+        # self.scheduler.add_job(id='app-job', func=MyJobs.app_index_job, trigger='interval', seconds=30 * 60)
         # self.scheduler.start()
         return self._server_app
 

@@ -8,9 +8,10 @@
             <div id="ad-swiper" class="swiper-container bd">
                 <ul class="swiper-wrapper">
                     {% for banner in banners %}
-                    <li class="swiper-slide" style="width: 300px;">
+                    <li class="swiper-slide" style="width: 300px;border-radius: 10px;">
                         <a href="{{ banner.coupon_share_url }}" target="_blank">
-                            <img src="{{ banner.pict_url }}" width="300px" height="300px" style="background-size: cover;">
+                            <img src="{{ banner.pict_url }}" width="290px" height="300px"
+                                 style="background-size: cover;border-radius: 10px;">
                             <p>
                                 折扣价：<span class="c-main">￥{{ banner.zk_final_price }}</span>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -118,7 +119,7 @@
         });
         let myAdsSwiper = new Swiper('#ad-swiper', {
             slidesPerView: 4,
-            spaceBetween: 5,
+            spaceBetween: 15,
             autoplay: true,//可选选项，自动滑动
             pagination: {
                 el: '#ads-swiper-pagination',

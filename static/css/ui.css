@@ -757,7 +757,7 @@ var{}	/*变量*/
 kbd{}	/*键盘文本*/
 code{}	/*计算机代码文本*/
 dfn{font-style: italic}	/*一个定义项目*/
-del{font-family:Simsun}	/*删除线*/
+del{font-weight: bold}	/*删除线*/
 code,kbd,pre,samp {font-family: monospace, serif;font-size: 1em}
 pre{white-space: pre-wrap}	/*预格式化的文本*/
 .uppercase{text-transform:uppercase} /*文字大写*/
