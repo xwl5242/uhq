@@ -2,6 +2,11 @@
 from app.utils.aes import AESUtil
 
 
+def math_mod(i, mod=5):
+    i = int(i)
+    return i % mod
+
+
 def str_split(s, sep=','):
     """
     split strings

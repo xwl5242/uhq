@@ -18,6 +18,7 @@ class AppServer:
         flask app, 并添加filters，jobs
         :return:
         """
+        self._server_app.add_template_filter(math_mod, 'math_mod')
         self._server_app.add_template_filter(str_split, 'str_split')
         self._server_app.add_template_filter(get_tuple, 'get_tuple')
         self._server_app.add_template_filter(get_list, 'get_list')

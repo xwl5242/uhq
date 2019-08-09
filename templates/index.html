@@ -26,10 +26,13 @@
         <div class="banner cl">
             <div class="bd">
                 <ul>
-                    <!-- for 循环，广告 -->
+                    {% for banner in banners %}
                     <li _src="" style="width: 100%;">
-                        <a href="" target="_blank"><img src="" width="760" height="338"></a>
+                        <a href="{{ banner.coupon_share_url }}" target="_blank">
+                            <img src="{{ banner.pict_url }}" style="width: 760px;height: 338px;">
+                        </a>
                     </li>
+                    {% endfor %}
                 </ul>
             </div>
             <div class="hd"><ul></ul></div>
@@ -105,7 +108,7 @@
         <div class="temai cl">
             <ul>
                 {% for tx in txs %}
-                <li>
+                <li {% if loop.index|math_mod() == 1 %}style="margin-left: 0px;"{% endif %}>
                     <div class="item">
                         <a target="_blank" href="{{ tx.click_url }}" class="link">
                             <img src="{{ tx.pict_url }}">
