@@ -3,7 +3,6 @@ from app.config import *
 from app.taobao import TBApi
 from app.utils.aes import AESUtil
 from app.appserver import AppServer
-from flask import render_template
 
 
 app_server = AppServer()
@@ -12,22 +11,27 @@ app = app_server.server_app
 
 @app.route('/')
 def index():
-    return render_template('index.html', today_rec=TBApi.get_goods_list(9660, 1, 5),
-                           txs=TBApi.get_goods_list(9660, 1, 10), menus=MENU, navs=NAV, cur_q=3756, material_map=MATERIAL_MAP)
+    today_rec = TBApi.get_goods_list(ROOT, 1, 5)
+    txs = TBApi.get_goods_list(ROOT, 1, 15)
+    return AppServer.render('index.html', today_rec=today_rec, txs=txs, cur_q=ROOT)
 
 
 @app.route('/q/<q_type>')
-def q_type(q_type):
-    q_type = AESUtil.decrypt(q_type)
-    print(q_type)
-    pass
+def menu_html(q_type):
+    q_type = int(AESUtil.decrypt(q_type))
+    today_rec = TBApi.get_goods_list(q_type, 1, 5)
+    txs = TBApi.get_goods_list(q_type, 1, 15)
+    return AppServer.render('index.html', today_rec=today_rec, txs=txs, cur_q=q_type)
 
 
 @app.route('/q-t/<q_type_item>')
-def q_type_item(q_type_item):
+def menu_nav_html(q_type_item):
     q_type_item = AESUtil.decrypt(q_type_item)
-    print(q_type_item)
-    pass
+    cur_q = int(q_type_item.split('-')[0])
+    cur_q_i = int(q_type_item.split('-')[1])
+    today_rec = TBApi.get_goods_list(cur_q_i, 1, 5)
+    txs = TBApi.get_goods_list(cur_q_i, 1, 15)
+    return AppServer.render('index.html', today_rec=today_rec, txs=txs, cur_q=cur_q, cur_q_i=cur_q_i)
 
 
 if __name__ == '__main__':

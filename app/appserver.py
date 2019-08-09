@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 from app.utils import *
+from app.config import *
 from flask_apscheduler import APScheduler
 from flask import Flask, render_template
 
@@ -37,5 +38,7 @@ class AppServer:
         """
         self._server_app.run(host=host, port=port, **kwargs)
 
-
+    @staticmethod
+    def render(html, **kwargs):
+        return render_template(html, menus=MENU, navs=NAV, material_map=MATERIAL_MAP, **kwargs)
 

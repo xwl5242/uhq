@@ -29,7 +29,7 @@
 		<ul>
             {% for menu in menus %}
                 <li class="{% if loop.index==1 %}cur{% endif %}">
-                    <a href="q/{{ menu|str_split(':')|get_list(1)|b64encode }}">{{ menu|str_split(':')|get_list(0) }}</a>
+                    <a href="/q/{{ menu|str_split(':')|get_list(1)|b64encode }}">{{ menu|str_split(':')|get_list(0) }}</a>
                 </li>
             {% endfor %}
 		</ul>
@@ -41,7 +41,7 @@
 		<ul>
 			<li class="cur"><a href="">全部</a></li>
 			{% for nav in navs %}
-                <li><a href="q-t/{{ (cur_q|string+'-'+material_map.get(cur_q|string)|get_list(loop.index-1))|b64encode }}">{{ nav }}</a></li>
+                <li><a href="/q-t/{{ (cur_q|string+'-'+material_map.get(cur_q|string)|get_list(loop.index-1))|b64encode }}">{{ nav }}</a></li>
             {% endfor %}
 		</ul>
 	</div>

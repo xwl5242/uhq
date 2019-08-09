@@ -10,6 +10,7 @@ AES_KEY = cp.get('AES_KEY', 'aes_key')
 TB_ADZONE_ID = str(cp.get('TAO_BAO', 'ad_zone_id'))
 # 页面菜单
 MENU = [m for m in str(cp.get('MENU', 'menu')).split(',')]
+ROOT = int(MENU[0].split(':')[1])
 # 页面导航，二级菜单
 NAV = [n for n in str(cp.get('MENU_NAV', 'nav')).split(',')]
 # 各导航对应的物料id集合
