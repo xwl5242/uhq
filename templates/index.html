@@ -4,36 +4,20 @@
 <!--banner-->
 <div class="banner-wrap">
     <div class="container cl">
-        <div class="banner-l">
-            <h3>[今日推荐]</h3>
-            <div class="recom">
-                <div id="my-swiper" class="swiper-container pbd">
-                    <ul class="swiper-wrapper">
-                        {% for rec in today_rec %}
-                        <li class="swiper-slide">
-                            <a href="{{ rec.click_url }}">
-                                <img src="{{ rec.pict_url }}" style="background-size: cover;">
-                                <p>券后价：<span class="c-main">￥{{ rec.zk_final_price }}</span></p>
-                                <p class="text-overflow">{{ rec.title }}</p>
-                            </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="phd"><ul></ul></div>
-            </div>
-        </div>
         <div class="banner cl">
             <div id="ad-swiper" class="swiper-container bd">
                 <ul class="swiper-wrapper">
                     {% for banner in banners %}
-                    <li class="swiper-slide">
+                    <li class="swiper-slide" style="width: 300px;">
                         <a href="{{ banner.coupon_share_url }}" target="_blank">
-                            <img src="{{ banner.pict_url }}" style="background-size: cover;">
+                            <img src="{{ banner.pict_url }}" width="300px" height="300px" style="background-size: cover;">
+                            <p>折扣价：<span class="c-main">￥{{ banner.zk_final_price }}</span></p>
+                            <p class="text-overflow">{{ banner.title }}</p>
                         </a>
                     </li>
                     {% endfor %}
                 </ul>
+                <div id="ads-swiper-pagination" class="swiper-pagination"></div>
             </div>
         </div>
     </div>
@@ -126,11 +110,13 @@
             to_url = to_url.split('?')[0]+'?p='+pageNo;
             window.location.href = to_url;
         });
-        let mySwiper = new Swiper('#my-swiper', {
-            {#autoplay: true,//可选选项，自动滑动#}
-        });
         let myAdsSwiper = new Swiper('#ad-swiper', {
+            slidesPerView: 4,
+            spaceBetween: 5,
             {#autoplay: true,//可选选项，自动滑动#}
+            pagination: {
+                el: '#ads-swiper-pagination',
+            },
         });
     </script>
 {% endblock %}

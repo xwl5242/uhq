@@ -50,17 +50,18 @@ a:hover{color: #fb3434;text-decoration: none;}
 .series ul li a{display: block;padding: 0 10px;margin: 0 5px;font-size: 14px;line-height: 46px;}
 .series ul li:hover a,.series ul li.cur a{color: #fb3434;border-bottom: 2px solid #fb3434;}
 /*banner*/
-.banner{position: relative;width: 800px;height: 340px;margin: 0 auto;float: left;}
+.banner{position: relative;width: 1200px;height: 350px;margin: 0 auto;float: left;}
 .banner .bd{position:relative;z-index:0;overflow:hidden;margin:0 auto;}
-.banner .bd li,.banner .bd ul{width:100%!important;}
-.banner .bd li{overflow:hidden;height:340px;text-align:center;}
-.banner .bd li a{display:block;height:340px;}
+/*.banner .bd li,.banner .bd ul{width:100%!important;}*/
+.banner .bd li{overflow:hidden;height:350px;text-align:center;}
+.banner .bd li a{display:block;height:350px;}
 .banner .hd{position:absolute;bottom:10px;left:0;right: 0;z-index: 2;width: 750px;margin: 0 auto;}
 .banner .hd ul{text-align:center;}
 .banner .hd ul li{display:inline-block;overflow:hidden;margin:5px;width:10px;height:10px;background-color:#ccc;font-size: 0;border-radius: 20px;cursor:pointer;}
 .banner .hd ul .on{background:#fb3434;}
 .banner .container{position: absolute;top: 0;left: 0;right: 0;z-index: 1;}
-.banner-l{float: left;width: 320px;height: 340px;background: #fff;text-align: center;}
+.banner-wrap{margin-top: 15px;}
+.banner-l{float: left;width: 210px;height: 350px;background: #fff;text-align: center;}
 .banner-l h3{margin: 10px 0;font-size: 16px;font-weight: bold;}
 .banner-l .recom{position: relative;padding: 10px;height: 250px;font-size: 14px;}
 .banner-l .recom .pbd li{overflow:hidden;height:220px;text-align:center;}
@@ -145,6 +146,7 @@ a:hover{color: #fb3434;text-decoration: none;}
 .bottom ul li a{margin: 0 20px;font-size: 12px;color: #999;}
 .bottom ul li a:hover{text-decoration: underline;}
 .bottom p{font-size: 12px;color: #999;}
+.banner-wrap p{font-size: 16px;background-color: #fff;}
 
 .fed-btns-info { padding: .5rem 0; color: #666; line-height: 1.125rem; text-align: center; cursor: pointer }
 .fed-btns-info:hover { border-color: #ff5f00!important; opacity: .8; filter: alpha(opacity=80) }
