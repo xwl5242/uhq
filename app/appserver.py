@@ -2,7 +2,7 @@
 from app.utils import *
 from app.config import *
 from flask_apscheduler import APScheduler
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 class AppServer:
@@ -10,7 +10,7 @@ class AppServer:
     def __init__(self):
         self._handlers = dict()
         self.scheduler = APScheduler()
-        self._server_app = Flask('yoviptv')
+        self._server_app = Flask('uhq')
 
     @property
     def server_app(self):
@@ -42,4 +42,12 @@ class AppServer:
     @staticmethod
     def render(html, **kwargs):
         return render_template(html, menus=MENU, navs=NAV, material_map=MATERIAL_MAP, **kwargs)
+
+    @staticmethod
+    def render_page(html, material_id, **kwargs):
+        page_no = request.args.get('p')
+        page_no = int(page_no) if page_no else 1
+        return AppServer.render(html, page_no=page_no,
+                                total=MATERIAL_COUNT_MAP.get(str(material_id)), **kwargs)
+
 

@@ -7,12 +7,12 @@
         <div class="banner-l">
             <h3>[今日推荐]</h3>
             <div class="recom">
-                <div class="pbd">
-                    <ul>
+                <div id="my-swiper" class="swiper-container pbd">
+                    <ul class="swiper-wrapper">
                         {% for rec in today_rec %}
-                        <li>
+                        <li class="swiper-slide">
                             <a href="{{ rec.click_url }}">
-                                <img src="{{ rec.pict_url }}">
+                                <img src="{{ rec.pict_url }}" style="background-size: cover;">
                                 <p>券后价：<span class="c-main">￥{{ rec.zk_final_price }}</span></p>
                                 <p class="text-overflow">{{ rec.title }}</p>
                             </a>
@@ -24,38 +24,20 @@
             </div>
         </div>
         <div class="banner cl">
-            <div class="bd">
-                <ul>
+            <div id="ad-swiper" class="swiper-container bd">
+                <ul class="swiper-wrapper">
                     {% for banner in banners %}
-                    <li _src="" style="width: 100%;">
+                    <li class="swiper-slide">
                         <a href="{{ banner.coupon_share_url }}" target="_blank">
-                            <img src="{{ banner.pict_url }}" style="width: 760px;height: 338px;">
+                            <img src="{{ banner.pict_url }}" style="background-size: cover;">
                         </a>
                     </li>
                     {% endfor %}
                 </ul>
             </div>
-            <div class="hd"><ul></ul></div>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    jQuery(".banner").slide({
-        titCell: ".hd ul",
-        mainCell: ".bd ul",
-        effect: "fold",
-        autoPlay: true,
-        autoPage: true,
-        trigger: "click",
-        startFun: function(i) {
-            var curLi = jQuery(".banner .bd li").eq(i);
-            if ( !! curLi.attr("_src")) {
-                curLi.css("background", curLi.attr("_src")).removeAttr("_src")
-            }
-        }
-    });
-    jQuery(".recom").slide({titCell:".phd ul",mainCell:".pbd ul",autoPlay:true,autoPage: true,});
-</script>
 <!--service-->
 <div class="service">
     <div class="container cl">
@@ -131,9 +113,24 @@
                 {% endfor %}
             </ul>
         </div>
+        <div class="fed-page-info fed-text-center"
+             data-to-page="True" data-page-no="{{ page_no }}" data-page-size="20" data-count="{{ total }}"></div>
     </div>
 </div>
 
 {% endblock %}
 {% block js %}
+    <script>
+        $('.fed-page-info').pagination(function(pageNo){
+            let to_url = window.location.href;
+            to_url = to_url.split('?')[0]+'?p='+pageNo;
+            window.location.href = to_url;
+        });
+        let mySwiper = new Swiper('#my-swiper', {
+            {#autoplay: true,//可选选项，自动滑动#}
+        });
+        let myAdsSwiper = new Swiper('#ad-swiper', {
+            {#autoplay: true,//可选选项，自动滑动#}
+        });
+    </script>
 {% endblock %}

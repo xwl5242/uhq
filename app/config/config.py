@@ -18,6 +18,10 @@ MATERIAL_MAP = dict()
 __options = cp.options('MATERIAL')
 for option in __options:
     MATERIAL_MAP[str(option).replace('material_', '')] = [material for material in str(cp.get('MATERIAL', option)).split(',')]
+MATERIAL_COUNT_MAP = dict()
+__options1 = cp.options('MATERIAL_COUNT')
+for option in __options1:
+    MATERIAL_COUNT_MAP[str(option).replace('material_', '')] = int(cp.get('MATERIAL_COUNT', option))
 
 if __name__ == '__main__':
     print(MATERIAL_MAP)
