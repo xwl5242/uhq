@@ -84,7 +84,7 @@ a:hover{color: #fb3434;text-decoration: none;}
 
 /*service*/
 .service ul{height: 80px;background: #fff;margin-top: 20px;}
-.service ul li{float: left;padding-top: 20px;width: 20%;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
+.service ul li{float: left;padding-top: 20px;width: 25%;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
 .service ul li p{margin-right: 10px;width: 40px;height: 40px;border-radius: 50%;border: 1px solid #fb3434;font-size: 20px;color: #fb3434;text-align: center;line-height: 40px;}
 .service ul li p i{font-size: 24px;}
 .service ul li h3{padding: 0;font-size: 14px;line-height: 24px;}

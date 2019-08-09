@@ -11,13 +11,19 @@
                     <li class="swiper-slide" style="width: 300px;">
                         <a href="{{ banner.coupon_share_url }}" target="_blank">
                             <img src="{{ banner.pict_url }}" width="300px" height="300px" style="background-size: cover;">
-                            <p>折扣价：<span class="c-main">￥{{ banner.zk_final_price }}</span></p>
+                            <p>
+                                折扣价：<span class="c-main">￥{{ banner.zk_final_price }}</span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                优惠券：<span class="c-main">￥{{ banner.coupon_amount }}</span>
+                            </p>
                             <p class="text-overflow">{{ banner.title }}</p>
                         </a>
                     </li>
                     {% endfor %}
                 </ul>
                 <div id="ads-swiper-pagination" class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>
@@ -54,13 +60,13 @@
                     <h4>24小时不间断上新</h4>
                 </div>
             </li>
-            <li>
-                <p class="f-l"><i class="iconfont icon-meiyuan"></i></p>
-                <div class="f-l">
-                    <h3 class="c-main">积分兑好礼</h3>
-                    <h4>提交订单就能赚积分</h4>
-                </div>
-            </li>
+{#            <li>#}
+{#                <p class="f-l"><i class="iconfont icon-meiyuan"></i></p>#}
+{#                <div class="f-l">#}
+{#                    <h3 class="c-main">积分兑好礼</h3>#}
+{#                    <h4>提交订单就能赚积分</h4>#}
+{#                </div>#}
+{#            </li>#}
         </ul>
     </div>
 </div>
@@ -113,9 +119,14 @@
         let myAdsSwiper = new Swiper('#ad-swiper', {
             slidesPerView: 4,
             spaceBetween: 5,
-            {#autoplay: true,//可选选项，自动滑动#}
+            autoplay: true,//可选选项，自动滑动
             pagination: {
                 el: '#ads-swiper-pagination',
+                type: 'progressbar',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
         });
     </script>
