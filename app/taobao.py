@@ -86,12 +86,12 @@ class TBApi:
             req = TbkDgMaterialOptionalRequest(keyword, TB_ADZONE_ID, page_no=page_no, page_size=page_size)
             resp = req.getResponse()
             # 返回结果
-            items = resp.get('tbk_dg_material_optional_responseg').get('result_list').get('map_data')
+            items = resp.get('tbk_dg_material_optional_response').get('result_list').get('map_data')
             return items
         except Exception as e:
             print(e)
 
 
 if __name__ == '__main__':
-    TBApi.search_item('女装')
+    print(TBApi.search_item('女装'))
 
