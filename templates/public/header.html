@@ -28,7 +28,7 @@
 	<div class="container cl">
 		<ul>
             {% for menu in menus %}
-                <li class="{% if loop.index==1 %}cur{% endif %}">
+                <li class="{% if menu|str_split(':')|get_list(1)|string==cur_q|string %}cur{% endif %}">
                     <a href="/q/{{ menu|str_split(':')|get_list(1)|b64encode }}">{{ menu|str_split(':')|get_list(0) }}</a>
                 </li>
             {% endfor %}
@@ -39,9 +39,11 @@
 <div class="series">
 	<div class="container cl">
 		<ul>
-			<li class="cur"><a href="">全部</a></li>
+			<li class="{% if cur_q_i|string=='' %}cur{% endif %}"><a href="/q/{{ cur_q|string|b64encode }}">全部</a></li>
 			{% for nav in navs %}
-                <li><a href="/q-t/{{ (cur_q|string+'-'+material_map.get(cur_q|string)|get_list(loop.index-1))|b64encode }}">{{ nav }}</a></li>
+                <li class="{% if cur_q_i|string==material_map.get(cur_q|string)|get_list(loop.index-1) %}cur{% endif %}">
+                    <a href="/q-t/{{ (cur_q|string+'-'+material_map.get(cur_q|string)|get_list(loop.index-1))|b64encode }}">{{ nav }}</a>
+                </li>
             {% endfor %}
 		</ul>
 	</div>
