@@ -33,6 +33,6 @@ def search_item(q_name):
 
 
 if __name__ == '__main__':
-    app_server.run(host='0.0.0.0', port=5566, debug=False)
+    app_server.run(host='0.0.0.0', port=5566, debug=True)
 
 

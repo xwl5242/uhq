@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+import re
 from app.utils import *
 from app.config import *
 from app.taobao import TBApi
@@ -46,13 +47,17 @@ class AppServer:
 
     @staticmethod
     def render_page(ma_id=None, s_kw=None, html='index.html', **kwargs):
+        user_agent = request.headers.get('User-Agent')
+        webs = re.findall(r'iPhone|iPad|iPod|iOS|Android', user_agent)
+        html = 'index_m.html' if len(webs) > 0 else html
         page_no = request.args.get('p')
         page_no = int(page_no) if page_no else 1
         top, txs = [], []
         total = 100 if s_kw else MATERIAL_COUNT_MAP.get(str(ma_id))
         if ma_id:
-            top = TBApi.get_goods_list(ma_id, page_no, 15)
-            txs = TBApi.get_goods_list(ma_id, page_no+1, 15)
+            pass
+            # top = TBApi.get_goods_list(ma_id, page_no, 15)
+            # txs = TBApi.get_goods_list(ma_id, page_no+1, 15)
         if s_kw:
             top = TBApi.search_item(s_kw, page_no, 15)
             txs = TBApi.search_item(s_kw, page_no+1, 15)

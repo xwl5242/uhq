@@ -1,0 +1,80 @@
+{% extends './default_m.html' %}
+{% block body %}
+<div id="offCanvasContentScroll" class="mui-content mui-scroll-wrapper">
+    <div class="mui-scroll">
+        <!--banner-->
+        <div id="slider" class="mui-slider banner">
+            <div class="mui-slider-group">
+                <!--for-->
+                <div class="mui-slider-item">
+                    <a href="">
+                        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1565416908261&di=f609516310e8a38f66f148176aebc3d0&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01d72e572950eb6ac7253812071529.jpg">
+                    </a>
+                </div>
+                <!--for-->
+            </div>
+        </div>
+        <!--nav-->
+        <div class="nav mui-clearfix">
+            <ul>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon01.png') }}"><p>全部商品</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon02.png') }}"><p>时尚女装</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon03.png') }}"><p>精品男装</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon04.png') }}"><p>鞋包配饰</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon05.png') }}"><p>美妆洗护</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon06.png') }}"><p>美食小吃</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon07.png') }}"><p>内衣裤袜</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon08.png') }}"><p>数码家电</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon09.png') }}"><p>家居用品</p></a></li>
+                <li><a href=""><img src="{{ url_for('static', filename='images/icon10.png') }}"><p>优惠头条</p></a></li>
+            </ul>
+        </div>
+        <div class="popular">
+        <!--main-->
+            <form action="/?g=m&m=jump" id="jump" method="post" >
+                <div style="clear: both;"></div>
+                    <div id="refreshContainer">
+                        <div class="goods-list am-cf list-wrapper" style="padding-top: 10px;">
+                            <div class="goods-item">
+                                <div class="tqk_pic">
+                                    <a data-transition="slide" rel="{$vo.quan}" data-cnzz="{$vo.num_iid}"  quanurl="{$vo.coupon_click_url}" href="javascript:;" class="img QtkSelfClick jump">
+                                        <span class="today-wrapper"><span>今日</span><span>新品</span></span>
+                                        <img src="">
+                                    </a>
+                                </div>
+                                <a data-transition="slide" href="javascript:;" class="title QtkSelfClick">
+                                    <div class="text" style=" color:#777777;">{$vo.title}</div>
+                                </a>
+                                <div class="tqkprice">
+                                    <span class="text">券后:￥{$vo.coupon_price}</span>
+                                    <label>领券省{$vo.quan}元</label>
+                                </div>
+                                <div class="price-wrapper">
+                                    <span class="text tqkico" style="padding-top: 4px;">
+                                        在售
+                                    </span>
+                                    <span class="price">{$vo.price}元</span>
+                                    <div class="sold-wrapper">
+                                        <span class="sold-num" style="font-size: 10px;">{$vo.volume}</span>
+                                        <span class="text" style="font-size: 10px;">人已买</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mui-text-center">
+                                <a href="{:U('list/index',array('p'=>2))}" class="mui-btn">查看更多优惠商品</a>
+                            </div>
+                        </div>
+                        <input type="hidden" id="item" name="item" value=""/>
+                        <input type="hidden" id="quan" name="quan" value=""/>
+                        <input type="hidden" id="quanurl" name="quanurl" value=""/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--add-->
+    </div>
+    <a id="scrollToTop" class="backTop hide"> <span class="iconfont icon-top"></span> </a>
+</div>
+{% endblock %}
+{% block js %}
+{% endblock %}
