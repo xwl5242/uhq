@@ -93,7 +93,7 @@ input[type=search]{text-align: left;}
 .footer-top .circle{width: 45px;height: 40px;background: #fff;border-top: 1px solid #ccc;border-top-left-radius: 50%;border-top-right-radius: 50%;z-index: -1;}
 .footer ul{margin: 0;padding: 0;background: #fff;}
 .footer ul li{list-style: none;float: left;width: 25%;text-align: center;}
-.footer ul li a{color: #666;}
+.footer ul li a{color: #fb3434;}
 .footer ul li a i{display: block;font-size: 23px;line-height: 30px;}
 .footer ul li a span{display: block;font-size: 10px;line-height: 20px;}
 .footer ul li a:active{color: #FF464E;}

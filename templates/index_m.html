@@ -27,14 +27,14 @@
                 <li>
                     <a href="/q/{{ cur_q|string|b64encode }}">
                         <img src="{{ url_for('static', filename='images/icon01.png') }}">
-                        <p>全部商品</p>
+                        <p style="color: #FF464E;">全部商品</p>
                     </a>
                 </li>
                 {% for nav in navs|get_sub_list(0,9) %}
                 <li>
                     <a href="/q-t/{{ (cur_q|string+'-'+material_map.get(cur_q|string)|get_list(loop.index-1))|b64encode }}">
                         <img src="{{ url_for('static', filename=nav_icons|get_list(loop.index-1)) }}">
-                        <p>{{ nav }}</p>
+                        <p style="color: #FF464E;">{{ nav }}</p>
                     </a>
                 </li>
                 {% endfor %}
