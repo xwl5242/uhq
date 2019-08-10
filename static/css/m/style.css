@@ -521,3 +521,4 @@ label.error{position: absolute;right: 10px;top: 10px;padding: 0;color: #dd524d;w
     font-weight: bold;
     padding: 0 5px;
 }
+.nav ul li a p{color: #FF464E;}

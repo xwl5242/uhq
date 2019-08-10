@@ -8,7 +8,8 @@
     <ul class="mui-clearfix">
         {% for menu in menus %}
             <li>
-                <a href="/q/{{ menu|str_split(':')|get_list(1)|b64encode }}">
+                <a href="/q/{{ menu|str_split(':')|get_list(1)|b64encode }}"
+                {% if menu|str_split(':')|get_list(1)|string==cur_q|string %} style="color: #6c37dd;"{% endif %}>
                     <i class="iconfont icon-{{ menu|str_split(':')|get_list(2) }}"></i>
                     <span>{{ menu|str_split(':')|get_list(0) }}</span>
                 </a>
