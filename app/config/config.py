@@ -12,7 +12,8 @@ TB_ADZONE_ID = str(cp.get('TAO_BAO', 'ad_zone_id'))
 MENU = [m for m in str(cp.get('MENU', 'menu')).split(',')]
 ROOT = int(MENU[0].split(':')[1])
 # 页面导航，二级菜单
-NAV = [n for n in str(cp.get('MENU_NAV', 'nav')).split(',')]
+NAV = [n.split(':')[0] for n in str(cp.get('MENU_NAV', 'nav')).split(',')]
+NAV_IMG = [f"images/icon{n.split(':')[1]}.png" for n in str(cp.get('MENU_NAV', 'nav')).split(',')]
 # 各导航对应的物料id集合
 MATERIAL_MAP, MATERIAL_COUNT_MAP = dict(), dict()
 __options = cp.options('MATERIAL')

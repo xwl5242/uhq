@@ -5,26 +5,20 @@
 </head>
 <body>
     <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
-        <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
-            {% include './public/m/nav.html' %}
-            <div class="mui-inner-wrap">
-                <header id="header" class="mui-bar mui-bar-nav">
-                <form action=""  id="so" method="get">
-                    <!--<div class="mui-input-row mui-search">
-                        <input type="search" value="{$sokey}" name="k" onblur="$('#so').submit()" class="mui-input-clear" placeholder="搜搜看您想要的商品优惠券">
-                    </div>-->
-                    <div class="mui-input-row searchtop">
-                        <span class="mui-icon mui-icon-search"></span>
-                        <input type="text" value="{$sokey}" name="k" onblur="$('#so').submit()" placeholder="搜搜看您想要的商品优惠券">
-                    </div>
-                    <button class="headsub" type="submit">搜索</button>
-                </form>
-                <a id="offCanvasBtn" href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>
-                </header>
-            </div>
+        {% include './public/m/nav.html' %}
+        <div class="mui-inner-wrap">
+            <header id="header" class="mui-bar mui-bar-nav">
+                <div class="mui-input-row searchtop">
+                    <span class="mui-icon mui-icon-search"></span>
+                    <input type="text" value="" name="k" placeholder="搜搜看您想要的商品优惠券">
+                </div>
+                <button id="m_search_btn" class="headsub" type="button">搜索</button>
+{#                <a id="offCanvasBtn" href="" class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"></a>#}
+            </header>
+            <!-- 页面顶端菜单 & 手机端底部菜单结束 -->
+            {% block body %}{% endblock %}
         </div>
-    <!-- 页面顶端菜单 & 手机端底部菜单结束 -->
-    {% block body %}{% endblock %}
+    </div>
     <!-- footer -->
     {% include './public/m/foot.html' %}
 </body>

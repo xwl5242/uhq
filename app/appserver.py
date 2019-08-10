@@ -31,7 +31,7 @@ class AppServer:
         # self.scheduler.start()
         return self._server_app
 
-    def run(self, host='127.0.0.1', port=9999, **kwargs):
+    def run(self, host='0.0.0.0', port=9999, **kwargs):
         """
         flask启动
         :param host: host，默认是127.0.0.1
@@ -43,24 +43,25 @@ class AppServer:
 
     @staticmethod
     def render(html, **kwargs):
-        return render_template(html, menus=MENU, navs=NAV, material_map=MATERIAL_MAP, **kwargs)
+        return render_template(html, menus=MENU, navs=NAV, nav_icons=NAV_IMG, material_map=MATERIAL_MAP, **kwargs)
 
     @staticmethod
     def render_page(ma_id=None, s_kw=None, html='index.html', **kwargs):
         user_agent = request.headers.get('User-Agent')
         webs = re.findall(r'iPhone|iPad|iPod|iOS|Android', user_agent)
         html = 'index_m.html' if len(webs) > 0 else html
+        page_size = 10 if len(webs) > 0 else 15
         page_no = request.args.get('p')
         page_no = int(page_no) if page_no else 1
         top, txs = [], []
         total = 100 if s_kw else MATERIAL_COUNT_MAP.get(str(ma_id))
         if ma_id:
             pass
-            # top = TBApi.get_goods_list(ma_id, page_no, 15)
-            # txs = TBApi.get_goods_list(ma_id, page_no+1, 15)
+            top = TBApi.get_goods_list(ma_id, page_no, page_size)
+            txs = TBApi.get_goods_list(ma_id, page_no+1, page_size)
         if s_kw:
-            top = TBApi.search_item(s_kw, page_no, 15)
-            txs = TBApi.search_item(s_kw, page_no+1, 15)
+            top = TBApi.search_item(s_kw, page_no, page_size)
+            txs = TBApi.search_item(s_kw, page_no+1, page_size)
         return AppServer.render(html, page_no=page_no, banners=top, txs=txs, total=total, **kwargs)
 
 
