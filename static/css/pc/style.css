@@ -108,7 +108,7 @@ a:hover{color: #fb3434;text-decoration: none;}
 .temai .item .sales{padding: 5px 10px 0;}
 .temai .item .sales img{display: inline-block;margin-right: 5px;margin-top: 2px;float: left;}
 .temai .item .sales p{display: inline-block;float: left;}
-.temai .item .coupon{position: absolute;right: -10px;width: 214px;height: 47px;background: url(../images/coupon.png) no-repeat center;}
+.temai .item .coupon{position: absolute;right: -10px;width: 214px;height: 47px;background: url(../../images/coupon.png) no-repeat center;}
 .temai .item .coupon h5{display: inline-block;margin: 0;padding: 13px 0 0 30px;color: #fff;-webkit-transition: -webkit-transform .5s ease;transition: -webkit-transform .5s ease;-o-transition: transform .5s ease;transition: transform .5s ease;transition: transform .5s ease, -webkit-transform .5s ease;}
 .temai .item .coupon h5 span{font-size: 20px;font-weight: bold;}
 .temai .item .coupon p{float: right;margin: 12px 8px;color: #fb3434;font-weight: bold;line-height: 14px;}
