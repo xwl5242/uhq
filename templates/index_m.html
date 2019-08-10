@@ -84,7 +84,7 @@
             </div>
         </div>
     </div>
-    <a id="scrollToTop" class="backTop hide"> <span class="iconfont icon-top"></span> </a>
+    <a id="scrollToTop" class="backTop" style="display: none;"> <span class="iconfont icon-top"></span> </a>
 </div>
 {% endblock %}
 {% block js %}
@@ -102,6 +102,19 @@
                 el: '#ads-swiper-pagination',
                 type: 'progressbar',
             },
+        });
+        //页面右侧滚动到页面顶部相关
+        window.onscroll= function(){
+            //变量t是滚动条滚动时，距离顶部的距离
+            let t = document.documentElement.scrollTop||document.body.scrollTop;
+            if(t>=400){
+                $("#scrollToTop").show()
+            }else{
+                $("#scrollToTop").hide()
+            }
+        };
+        $('#scrollToTop').click(function(){
+            $('html,body').animate({scrollTop: '0px'}, 800);
         });
     </script>
 {% endblock %}
