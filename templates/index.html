@@ -143,5 +143,11 @@
         $('.call-top').click(function(){
             $('html,body').animate({scrollTop: '0px'}, 800);
         });
+        $('#pc_search_btn').click(function(){
+            let k = $('input[name="k"]').val();
+            if(k){
+                window.location.href='/q-k/'+k;
+            }
+        });
     </script>
 {% endblock %}

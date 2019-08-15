@@ -2,10 +2,23 @@
 from app.config import *
 from app.utils.aes import AESUtil
 from app.appserver import AppServer
+from flask import send_from_directory
 
 
 app_server = AppServer()
 app = app_server.server_app
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
+@app.route('/root.txt')
+def root_txt():
+    return send_from_directory(os.path.join(app.root_path, 'templates'),
+                               'root.txt')
 
 
 @app.route('/')
