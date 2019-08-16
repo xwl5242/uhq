@@ -12,6 +12,15 @@
 <script type="text/javascript" src="{{url_for('static', filename='js/swiper.min.js')}}" ></script>
 <script type="text/javascript" src="{{url_for('static', filename='js/pagination.js')}}" ></script>
 <script>
+    //百度统计
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?5f69a4466deb55bf700cbd014867f45c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    //百度push
     (function(){
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
