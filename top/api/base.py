@@ -159,8 +159,8 @@ class RestApi(object):
     # Rest api的基类
     # ===========================================================================
     
-    def __init__(self, domain='gw.api.taobao.com', port=80, appkey='27722846',
-                 secret='0bd75d91b3cd38bd1e3fe3b77112fc0e'):
+    def __init__(self, domain='gw.api.taobao.com', port=80, appkey='27746999',
+                 secret='d5bd09e440cb146afac270b7b99b923e'):
         # =======================================================================
         # 初始化基类
         # Args @param domain: 请求的域名或者ip

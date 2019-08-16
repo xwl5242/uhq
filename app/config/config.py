@@ -27,6 +27,9 @@ for option in __options:
     for v in __value:
         MATERIAL_COUNT_MAP[v] = __count
 
+DATA_SOURCE = str(cp.get('DATA_SOURCE', 'local'))
+
+
 if __name__ == '__main__':
     print(MATERIAL_MAP)
     print(MATERIAL_COUNT_MAP)

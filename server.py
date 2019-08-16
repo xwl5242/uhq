@@ -28,12 +28,22 @@ def index():
 
 @app.route('/q/<q_type>')
 def menu_html(q_type):
+    """
+    根据大类别查询商品（网站页面菜单）
+    :param q_type:
+    :return:
+    """
     q_type = int(AESUtil.decrypt(q_type))
     return AppServer.render_page(q_type, cur_q=q_type)
 
 
 @app.route('/q-t/<q_type_item>')
 def menu_nav_html(q_type_item):
+    """
+    根据大类别和小类别综合查询商品（网站页面菜单和导航结合）
+    :param q_type_item:
+    :return:
+    """
     q_type_item = AESUtil.decrypt(q_type_item)
     cur_q = int(q_type_item.split('-')[0])
     cur_q_i = int(q_type_item.split('-')[1])
@@ -42,6 +52,11 @@ def menu_nav_html(q_type_item):
 
 @app.route('/q-k/<q_name>')
 def search_item(q_name):
+    """
+    关键字搜索
+    :param q_name:
+    :return:
+    """
     return AppServer.render_page(s_kw=q_name, cur_q=ROOT)
 
 
