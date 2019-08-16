@@ -46,7 +46,7 @@
         </div>
         <div class="popular">
         <!--main-->
-            <div id="refreshContainer">
+            <div id="refreshContainer" style="margin-bottom: 40px;">
                 <p><i class="iconfont icon-fire"></i>精选推荐</p>
                 <div class="goods-list am-cf list-wrapper" style="padding-top: 10px;">
                     {% for tx in txs %}
@@ -78,9 +78,9 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="fed-page-info fed-text-center"
-                 data-to-page="True" data-page-no="{{ page_no }}" data-page-size="12" data-count="{{ total }}"></div>
                 </div>
+                <div class="fed-page-info fed-text-center" style="font-size: 14px;"
+                     data-to-page="True" data-page-no="{{ page_no }}" data-page-size="12" data-count="{{ total }}"></div>
             </div>
         </div>
     </div>
@@ -98,10 +98,6 @@
             slidesPerView: 2,
             spaceBetween: 15,
             autoplay: true,//可选选项，自动滑动
-            pagination: {
-                el: '#ads-swiper-pagination',
-                type: 'progressbar',
-            },
         });
         //页面右侧滚动到页面顶部相关
         window.onscroll= function(){

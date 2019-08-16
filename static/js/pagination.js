@@ -108,7 +108,7 @@ $.fn.pagination = function pagination(fn){
         html.push('<a class="fed-btns-info fed-rims-info fed-hide fed-show-xs-inline" href="javascript:;">'+pageIndex+'/'+pageCount+'</a>')
         html.push('<a class="pg-next fed-btns-info fed-rims-info'+(pageIndex==pageCount?" fed-btns-disad":"")+'">下页</a>');
         html.push('<a class="pg-last fed-btns-info fed-rims-info fed-hide fed-show-xs-inline">尾页</a>');
-        html.push('<input class="fed-rims-info" type="text" placeholder="输入页码" autocomplete="off">');
+        html.push('<input class="fed-rims-info" type="text" style="font-size: 14px;" placeholder="输入页码" autocomplete="off">');
         html.push('<a class="pg-jump fed-btns-info fed-rims-info fed-page-jump">跳转</a>');
         return html.join("");
     }
