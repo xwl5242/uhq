@@ -147,12 +147,14 @@ a:hover{color: #fb3434;text-decoration: none;}
 .bottom ul li a:hover{text-decoration: underline;}
 .bottom p{font-size: 12px;color: #999;}
 .banner-wrap p{font-size: 16px;background-color: #fff;}
+
 /*right*/
 .back_top { display: block; position: fixed; width: 31px; right: 20px; bottom: 30px; }
 .back_top img { position: absolute; margin-left: -140px; margin-top: -130px; }
 .back_top .call-top { background: url(../../images/bottom_btn.png) 0 0 no-repeat scroll transparent; width: 31px; height: 32px; display: none; margin-top: -32px; }
 .back_top .call-check { background: url(../images/bottom_btn.png) 0 -86px no-repeat scroll transparent; width: 31px; height: 32px; display: block; margin-top: 10px; cursor: pointer; }
 
+/*pagination*/
 .fed-btns-info { padding: .5rem 0; color: #666; line-height: 1.125rem; text-align: center; cursor: pointer }
 .fed-btns-info:hover { border-color: #ff5f00!important; opacity: .8; filter: alpha(opacity=80) }
 .fed-rims-info { border: .0625rem solid #e2e2e2; border-radius: .1875rem }
